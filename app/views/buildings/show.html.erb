@@ -11,15 +11,14 @@
     <%= @building.number_of_floors%><br>
 
 <h3> All Companies with Offices Here</h3>
-<% @building.office.each do |b| %>
-    <label> Company: </label>
-    <%= b.company %><br>
+<% @building.offices.each do |b| %>
+    <%= b.company.name %><br>
 <% end %>
 
 <h3> Total Rent </h3>
-<% @company.office.building.each do |c|%>
-    <%= c.rent_per_floor %>
-<% end %>
+<%# <% @company.offices.each do |office|%>
+    <%# <%= office.building.rent_per_floor %>
+<%# <% end %>
 
 <%# Users should be able to see a single building's details
 see all of the companies that have offices in the building
