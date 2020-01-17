@@ -1,0 +1,20 @@
+<h3> Office Locations </h3>
+<% @company.offices.each do |office| %>
+    <label> Building: </label>
+    <%= office.building %><br>
+<% end %>
+
+<h3> Employees at Company </h3>
+<% @company.employees.each do |e| %>
+    <label> Name: </label>
+    <%= e.name %><br>
+<% end %>
+
+<h3> Total Rent </h3>
+<%= @company.offices.buildings.rent_per_floor %>
+
+<%# list of all of its offices, as well as the building in which the office is located
+add an employee to the company
+see a list of all employees
+remove an employee from the company
+see how much total rent it is paying %>

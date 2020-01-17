@@ -1,0 +1,9 @@
+<h1> Building Index Page </h1>
+
+<% @buildings.each do |building| %>
+    <%= building.name %><br>
+    <%= building.number_of_floors_available %>
+<% end %>
+
+<%# Users should be able to see a list of all buildings, 
+as well as a list of all available floors for each building. %>
