@@ -1,4 +1,7 @@
 class Building < ApplicationRecord
+  has_many :offices
+  has_many :companies, through: :office
+  validates :name, :country, :address, :rent_per_floor, :number_of_floors, presence: true 
 
   def number_of_floors_available
     # Will not work until relationships and schema are corretly setup
