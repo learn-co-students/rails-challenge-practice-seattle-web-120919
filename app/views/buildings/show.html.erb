@@ -11,18 +11,12 @@
     <%= @building.number_of_floors%><br>
 
 <h3> All Companies with Offices Here</h3>
-<% @building.offices.each do |o| %>
-    <%= o.company.name %><br>
-<% end %>
-<%# 
-<h3> All Companies with Offices Here</h3>
 <% @building.companies.each do |company| %>
-    <%# <%= link_to company.name, company_path(company)%><br>
-<%# <% end %> %> %> %>
+    <%= link_to company.name, company_path(company) %><br>
+<% end %>
 
 <%# total rent this building is making based on 
-all the companies that have rented offices in this building %>
+all the companies that have rented offices in this building 
+- take all companies * rent_per_floor %>
+
 <h3> Total Rent </h3>
-<%# <% @company.offices.each do |office|%>
-    <%# <%= office.building.rent_per_floor %>
-<%# <% end %>

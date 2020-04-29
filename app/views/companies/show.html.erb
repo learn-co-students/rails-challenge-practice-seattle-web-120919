@@ -9,9 +9,9 @@ On this page, a user should be able to see how much total rent it is paying %>
 <h1> <%= @company.name %> </h1>
 
 <h3> Office Locations </h3>
-<% @company.offices.each do |office| %>
+<% @company.buildings.each do |building| %>
     <label> Building: </label>
-    <%=  office.building.name %><br>
+    <%=  link_to building.name, building_path(building) %><br>
 <% end %>
 
 <h3> Employees at Company </h3>
@@ -21,7 +21,9 @@ On this page, a user should be able to see how much total rent it is paying %>
 
 <h3> Add/Remove an Employee </h3>
  
-<%# sum up all rent_per_floor!! %>
+<%# office building * number of floors in that building * rent_per_floor
+sum together all office totals 
+%>
 <h3> Total Rent </h3>
 <%# <%= @company.buildings.each do |b|
     b.rent_per_floor %>
