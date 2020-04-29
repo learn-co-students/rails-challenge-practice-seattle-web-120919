@@ -1,0 +1,23 @@
+<h3> Building Details </h3>
+    <label> Name: </label>
+    <%= @building.name %><br>
+    <label> Country: </label>
+    <%= @building.country %><br>
+    <label> Address: </label>
+    <%= @building.address %><br>
+    <label> Rent per Floor: </label>
+    <%= @building.rent_per_floor %><br>
+    <label> Number of floors: </label>
+    <%= @building.number_of_floors%><br>
+
+<h3> All Companies with Offices Here</h3>
+<% @building.offices.each do |b| %>
+    <%= b.company.name %><br>
+<% end %>
+
+<%# total rent this building is making based on 
+all the companies that have rented offices in this building %>
+<h3> Total Rent </h3>
+<%# <% @company.offices.each do |office|%>
+    <%# <%= office.building.rent_per_floor %>
+<%# <% end %>
