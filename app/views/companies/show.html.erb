@@ -11,20 +11,19 @@ On this page, a user should be able to see how much total rent it is paying %>
 <h3> Office Locations </h3>
 <% @company.offices.each do |office| %>
     <label> Building: </label>
-    <%= office.building.name %><br>
+    <%=  office.building.name %><br>
 <% end %>
 
 <h3> Employees at Company </h3>
 <% @company.employees.each do |e| %>
-    <label> Name: </label>
     <%= e.name %><br>
 <% end %>
 
 <h3> Add/Remove an Employee </h3>
-
+ 
 <%# sum up all rent_per_floor!! %>
 <h3> Total Rent </h3>
-<%= @company.offices.each do |office|
-    office.building.rent_per_floor %>
-<% end %>
+<%# <%= @company.buildings.each do |b|
+    b.rent_per_floor %>
+<%# <% end %>
 
