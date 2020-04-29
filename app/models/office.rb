@@ -1,6 +1,6 @@
 class Office < ApplicationRecord
     belongs_to :building
     belongs_to :company
-    validates :floor, numericality: true 
+    validates :floor, numericality: { only_integer: true} 
     validates :building, :company, :floor, presence: true
 end
