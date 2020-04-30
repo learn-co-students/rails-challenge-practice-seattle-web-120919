@@ -9,6 +9,9 @@
     <%= @building.rent_per_floor %><br>
     <label> Number of floors: </label>
     <%= @building.number_of_floors%><br>
+    <label>Available Floors: </label>
+    <%= @building.number_of_floors_available %></p>
+
 
 <h3> All Companies with Offices Here</h3>
 <% @building.companies.each do |company| %>
@@ -18,5 +21,9 @@
 <%# total rent this building is making based on 
 all the companies that have rented offices in this building 
 - take all companies * rent_per_floor %>
-
 <h3> Total Rent </h3>
+<%= @building.companies.count * @building.rent_per_floor %>
+
+
+<p><%= link_to "Edit Building Details", edit_building_path(@building)%><br>
+<%= link_to "All Buildings", buildings_path %></p>
