@@ -1,0 +1,29 @@
+<%# Users should be able to see a show page for an individual company
+On this page, a user should be able to see a list of all of its offices, 
+    as well as the building in which the office is located
+On this page, a user should be able to add an employee to the company
+On this page, a user should be able to see a list of all employees
+On this page, a user should be able to remove an employee from the company
+On this page, a user should be able to see how much total rent it is paying %>
+
+<h1> <%= @company.name %> </h1>
+
+<h3> Offices </h3>
+<% @company.offices.each do |office| %>
+    Building: <%= office.building.name %><br>
+    Floor: <%= office.floor %> <br>
+    Rent: <%= office.building.rent_per_floor %><br><br>
+<% end %>
+
+<h3> Employees </h3>
+<% @company.employees.each do |e| %>
+    <%= e.name %>, <%= e.title %><br>
+<% end %>
+
+<h3> Total Rent </h3>
+<%= @company.total_rent %>
+
+<%# <h3> Add/Remove an Employee </h3> %>
+
+<%= link_to "All Companies", companies_path %><br>
+<%= link_to "Edit this company", edit_company_path(@company) %>

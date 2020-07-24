@@ -1,0 +1,16 @@
+<h1> Office Details </h1>
+    <h3> Building: </h3>
+    <%=  @office.building.name%>
+    <h3> Company: </h3>
+    <%= @office.company.name %>
+    <h3> Number of Employees: </h3>
+    <%= @office.company.employees.count %>
+
+    <h3> Employees: </h3>
+    <ul> 
+      <% @office.company.employees.each do |employee| %>
+        <li>
+        <%= employee.name%>, <%=employee.title%><br>
+        </li>
+      <% end %>
+    </ul>
